@@ -16,8 +16,7 @@ pipeline {
 				git clone https://github.com/Vanessa-wsp/22053383_repo.git;
 				targets=22053383-websvr;
 				locate_script='/tmp/clone/22053383_repo/22053383_script';
-				bolt script run 'https://github.com/Vanessa-wsp/22053383_repo/blob/f3a763e6a429239ea5ff545386179b55ebb086bc/22053383_jenkinsfile' -t $targets;
-				'''
+				bolt script run $locate_script -t $targets -u clientadm -p user123 --no-host-key-check --run-as root;				'''
 				echo "22053383 STG2 - Push to production web server completed"
 			}
 		}
