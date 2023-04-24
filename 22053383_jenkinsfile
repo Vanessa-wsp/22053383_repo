@@ -13,7 +13,7 @@ pipeline {
 
 				targets=22053383-websvr;
 
-				bolt script run 'https://github.com/Vanessa-wsp/22053383_repo/blob/f3a763e6a429239ea5ff545386179b55ebb086bc/22053383_jenkinsfile';
+				bolt script run 'https://github.com/Vanessa-wsp/22053383_repo/blob/f3a763e6a429239ea5ff545386179b55ebb086bc/22053383_jenkinsfile' -t $targets;
 				'''
 				echo "22053383 STG2 - Push to production web server completed"
 			}
