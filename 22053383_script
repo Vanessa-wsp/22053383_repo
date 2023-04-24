@@ -1,0 +1,10 @@
+#!/bin/bash
+apt-get update
+puppet resource package git ensure=present
+puppet resource package apache2 ensure=present
+puppet resource service apache2 ensure=running
+puppet resource file /tmp/22053383/clone ensure=absent force=true
+puppet resource file /tmp/22053383/clone ensure=directory
+cd /tmp/22053383/clone
+git clone https://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@github.com/Vanessa-wsp/22053383_repo.git
+cp -p /tmp/22053383/clone/22053383_repo/index.html /var/www/index.html
