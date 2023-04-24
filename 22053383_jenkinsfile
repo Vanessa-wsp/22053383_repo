@@ -10,7 +10,7 @@ pipeline {
 		stage('22053383 STG2') {
 			steps {
 				sh '''#!/bin/bash
-				puppet resource file /tmp/22053383/clone ensure=absent force=true;
+				puppet resource file /tmp/22053383/clone ensure=absent;
 				puppet resource file /tmp/22053383/clone ensure=directory force=true;
 				cd /tmp/22053383/clone;
 				git clone https://github.com/Vanessa-wsp/22053383_repo.git;
