@@ -10,13 +10,10 @@ pipeline {
 		stage('22053383 STG2') {
 			steps {
 				sh '''#!/bin/bash
-				puppet resource file /tmp/22053383/clone ensure=absent;
-				puppet resource file /tmp/22053383/clone ensure=directory force=true;
-				cd /tmp/22053383/clone;
-				git clone https://github.com/Vanessa-wsp/22053383_repo.git;
+
 				targets=22053383-websvr;
-				locate_script='/tmp/22053383/clone/22053383_repo/22053383_script';
-				bolt script run $locate_script -t $targets -u clientadm -p user123 --no-host-key-check --run-as root;
+
+				bolt script run 'https://github.com/Vanessa-wsp/22053383_repo/blob/f3a763e6a429239ea5ff545386179b55ebb086bc/22053383_jenkinsfile';
 				'''
 				echo "22053383 STG2 - Push to production web server completed"
 			}
