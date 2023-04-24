@@ -4,7 +4,7 @@ sudo puppet resource package git ensure=present
 sudo puppet resource package apache2 ensure=present
 sudo puppet resource service apache2 ensure=running
 sudo puppet resource file /tmp/22053383/clone ensure=absent force=true
-sudo puppet resource file /tmp/22053383/clone ensure=directory
+sudo puppet resource file /tmp/22053383/clone ensure=directory force=true
 cd /tmp/22053383/clone
 sudo git clone https://github.com/Vanessa-wsp/22053383_repo.git
 sudo cp -p /tmp/22053383/clone/22053383_repo/index.html /var/www/index.html
